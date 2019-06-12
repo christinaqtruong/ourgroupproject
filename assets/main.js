@@ -47,11 +47,22 @@ var firebaseConfig = {
 
     });
 
+    //putting the database into the html
+    database.ref().on("child_added", function(snapshot) {
+        // storing the snapshot.val() in a variable for convenience
+        var sv = snapshot.val();
+  
+        // Console.loging the last user's data
+        console.log(sv.employeeName);
+        console.log(sv.role);
+        console.log(sv.startDate);
+        console.log(sv.monthWorked);
+
     //put the input values onto the html
-    $('#employee-name').text(employeeName)
-    $('#role').text(role);
-    $("#start-date").text(startDate);
-    $('#month-worked').text(monthWorked);
-    $('#month-rate').text(monthRate);
-    $('#total-bill').text(totalBill);
-    })
+    $('#employee-name').text(sv.employeeName)
+    $('#role').text(sv.role);
+    $("#start-date").text(sv.startDate);
+    $('#month-worked').text(sv.monthWorked);
+    $('#month-rate').text(sv.monthRate);
+    $('#total-bill').text(sv.totalBill);
+    })})
