@@ -13,6 +13,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   //initial variables
+  var database = firebase.database();
   var employeeName;
   var role;
   var startDate;
@@ -21,7 +22,8 @@ var firebaseConfig = {
   var totalBill;
 
   //upon clicking the submit button
-  $('#submit').on('click', function(){
+  $('#submit').on('click', function(event){
+    event.preventDefault();
 
     //assign input values to variables
     var employeeName = $('#employee-name-input').val().trim();
@@ -31,11 +33,36 @@ var firebaseConfig = {
     var monthRate = $('#month-rate-input').val().trim();
     var totalBill = $('#total-bill-input').val().trim();
 
+    console.log(employeeName);
+
+    //pushing input to database
+    database.ref().push({
+        employeeName: employeeName,
+        role: role,
+        startDate: startDate,
+        monthWorked: monthWorked,
+        monthRate: monthRate,
+        totalBill: totalBill,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+
+    });
+
+    //putting the database into the html
+    database.ref().on("child_added", function(snapshot) {
+        // storing the snapshot.val() in a variable for convenience
+        var sv = snapshot.val();
+  
+        // Console.loging the last user's data
+        console.log(sv.employeeName);
+        console.log(sv.role);
+        console.log(sv.startDate);
+        console.log(sv.monthWorked);
+
     //put the input values onto the html
-    $('#employee-name').text(employeeName)
-    $('#role').text(role);
-    $("#start-date").text(startDate);
-    $('#month-worked').text(monthWorked);
-    $('#month-rate').text(monthRate);
-    $('#total-bill').text(totalBill);
-    })
+    $('#employee-name').text(sv.employeeName)
+    $('#role').text(sv.role);
+    $("#start-date").text(sv.startDate);
+    $('#month-worked').text(sv.monthWorked);
+    $('#month-rate').text(sv.monthRate);
+    $('#total-bill').text(sv.totalBill);
+    })})
