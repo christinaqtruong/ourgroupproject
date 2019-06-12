@@ -13,6 +13,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   //initial variables
+  var database = firebase.database();
   var employeeName;
   var role;
   var startDate;
@@ -21,7 +22,8 @@ var firebaseConfig = {
   var totalBill;
 
   //upon clicking the submit button
-  $('#submit').on('click', function(){
+  $('#submit').on('click', function(event){
+    event.preventDefault();
 
     //assign input values to variables
     var employeeName = $('#employee-name-input').val().trim();
@@ -30,6 +32,20 @@ var firebaseConfig = {
     var monthWorked = $('#month-word-input').val().trim();
     var monthRate = $('#month-rate-input').val().trim();
     var totalBill = $('#total-bill-input').val().trim();
+
+    console.log(employeeName);
+
+    //pushing input to database
+    database.ref().push({
+        employeeName: employeeName,
+        role: role,
+        startDate: startDate,
+        monthWorked: monthWorked,
+        monthRate: monthRate,
+        totalBill: totalBill,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+
+    });
 
     //put the input values onto the html
     $('#employee-name').text(employeeName)
