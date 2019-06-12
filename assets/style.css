@@ -1,0 +1,37 @@
+
+table {
+    width: 100%;
+    border-bottom: 1px solid grey
+}
+
+th {
+    border-bottom: 1px solid grey
+}
+
+button{
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    background-color: green;
+}
+
+.container {
+    margin: 5% 5%;
+}
+
+.flex-box-column {
+    display: flex;
+    flex-direction: column
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+    padding: 50px 0px;
+    background-color: grey
+}
+
+
+#current-empolyees {
+    margin: 0% 5%;
+}
