@@ -5,18 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
     <link rel="stylesheet" href="assets/style.css">
-
-      
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
- <!-- Firebase References -->
- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-
-
-        <title>employee data management</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <title>employee data management</title>
 </head>
 
 <body>
@@ -35,42 +30,53 @@
                     <th>Total billed</th>
                 </tr>
                 <tr id="table-heading">
+                    <th id="employee-name"></th>
+                    <th id="role'"></th>
+                    <th id="start-date"></th>
+                    <th id="month-rate"></th>
+                    <th></th>
                 </tr>
             </table>
-        </div>
 
-    </section>
-    <br>
+            <br>
 
-    <section>
-        <div class="container">
-            <div class="flex-box-column">
-                <h3>Add Employee</h3>
-                <form action="">
+            <section>
+                <div class="container">
                     <div class="flex-box-column">
-                        <label for="">employee Name</label>
-                        <input id="employee-name-input" type="text">
+                        <h3>Add Employee</h3>
+                        <form action="">
+                            <div class="flex-box-column">
+                                <label for="">employee Name</label>
+                                <input id="employee-name-input" type="text">
+                            </div>
+                            <div class="flex-box-column">
+                                <label for="">Role</label>
+                                <input id="role-input" type="text">
+                            </div>
+                            <div class="flex-box-column">
+                                <label for="">Start Date</label>
+                                <input id="month-start-input" type="date">
+                            </div>
+                            <div class="flex-box-column">
+                                <label for="">Monthly Rate</label>
+                                <input id="month-rate-input" type="number">
+                            </div>
+                            <button id="submit-button">Submit</button>
+                        </form>
                     </div>
-                    <div class="flex-box-column">
-                        <label for="">Role</label>
-                        <input id="role-input" type="text">
-                    </div>
-                    <div class="flex-box-column">
-                        <label for="">Start Date</label>
-                        <input id="month-start-input" type="date">
-                    </div>
-                    <div class="flex-box-column">
-                        <label for="">Monthly Rate</label>
-                        <input id="month-rate-input" type="number">
-                    </div>
-                    <button id="submit-button">Submit</button>
-                </form>
-            </div>
+                </div>
+            </section>
 
-        </div>
-    </section>
-        <script src="./assets/main.js"></script>
 
+            <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+            <script src=“https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js”> </script> <script
+                src=“https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js”> </script> <script
+                src="assets/main.js"></script>
+            <script src="./assets/main.js"></script>
+
+            <script src=“https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js”> </script> <script
+                src=“https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js”> </script> <script
+                src="assets/main.js"></script>
 </body>
 
 </html>
