@@ -1,25 +1,8 @@
-// html format
-//  #employee-name
-//  #role
-//  #start-date
-//  #month-worked
-//  #month-rate
-//  #total-bill
 
-// if inputs
-//  #employee-name-input
-//  #role-input
-//  #start-date-input
-//  #month-worked-input
-//  #month-rate-input
-//  #total-bill-input
+=======
 
-
-//.push({})
-// firebase.database.ServerValue.TIMESTAMP
-
-// databse.ref().on("child_added")
-
+//Mark's firebase
+>>>>>>> master
 var firebaseConfig = {
     apiKey: "AIzaSyD0S5YDafFPM9tQ0b3BlTMtF7L8FJFlm7Q",
     authDomain: "markb-project1.firebaseapp.com",
@@ -31,22 +14,31 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  // Assign the reference to the database to a variable named 'database'
-  // var database = ...
-  var database = firebase.database();
 
+  //initial variables
   var employeeName;
   var role;
   var startDate;
-  var monthsWorked;
-  var monthlyRate;
-  var totalBilled;
+  var monthWorked;
+  var monthRate;
+  var totalBill;
 
+  //upon clicking the submit button
+  $('#submit').on('click', function(){
 
-  $('<tr>').append({
-      $('<td>').text(employeeName),
-      $('<td>').text(role),
-      $('<td>').text(startDate),
-      $('<td>').text(monthsWorked),
-      $('<td>').text(employeeName)
-  })
+    //assign input values to variables
+    var employeeName = $('#employee-name-input').val().trim();
+    var role = $('#role-input').val().trim();
+    var startDate = $('#start-date-input').val().trim();
+    var monthWorked = $('#month-word-input').val().trim();
+    var monthRate = $('#month-rate-input').val().trim();
+    var totalBill = $('#total-bill-input').val().trim();
+
+    //put the input values onto the html
+    $('#employee-name').text(employeeName)
+    $('#role').text(role);
+    $("#start-date").text(startDate);
+    $('#month-worked').text(monthWorked);
+    $('#month-rate').text(monthRate);
+    $('#total-bill').text(totalBill);
+    })
