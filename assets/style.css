@@ -1,4 +1,7 @@
-
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
 table {
     text-align: left;
     width: 100%;
@@ -18,11 +21,15 @@ button{
 
 header {
     text-align: center;
-    height: 100px;
+    height: 200px;
     background-color: grey;
+}
+label {
+    font-size: 20px;
 }
 
 input {
+    font-size: 20px;
     margin: 5px 0px;
 }
 
