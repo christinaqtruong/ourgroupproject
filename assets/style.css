@@ -1,5 +1,6 @@
 
 table {
+    text-align: left;
     width: 100%;
     border-bottom: 1px solid grey
 }
@@ -9,10 +10,20 @@ th {
 }
 
 button{
-    margin: 5px;
+    float: right;
     padding: 10px;
     color: white;
     background-color: green;
+}
+
+header {
+    text-align: center;
+    height: 100px;
+    background-color: grey;
+}
+
+input {
+    margin: 5px 0px;
 }
 
 .container {
